@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfOfflineFilterPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>This plugins is a filter that if you want to set your website offline</summary>
+ <description>This plugins is a filter that if you want to set your website offline</description>
+ <lead>
+  <name>Cedric Lombardot</name>
+  <user>lombardot</user>
+  <email>cedric.lombardot@spyrit.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-01-28</date>
+ <version>
+   <release>1.0.1</release>
+   <api>1.0.1</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.com/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+ 	<dir name="/">
+ 		<dir name="lib">
+ 			<file name="sfOfflineFilter.class.php" role="data"/>
+ 		</dir>
+ 		<file name="README" role="data"/>
+ 		<file name="LICENSE" role="data"/>
+ 	</dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.1.0</min>
+    <max>1.3.0</max>
+    <exclude>1.3.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+
+ <phprelease>
+ </phprelease>
+
+ <changelog>
+ <release>
+    <version>
+      <release>1.0.1</release>
+      <api>1.0.1</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.com/license">MIT license</license>
+    <date>2009-01-28</date>
+    <license>MIT</license>
+    <notes>
+      * Remove StatusCode 302 before forwarding have problem on IE with https
+    </notes>
+  </release>
+ <release>
+    <version>
+      <release>1.0.0</release>
+      <api>1.0.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.com/license">MIT license</license>
+    <date>2009-01-19</date>
+    <license>MIT</license>
+    <notes>
+      * Replace isSuperAdmin By sfConfig::get('app_is_offline_credential','offline')
+      * Adding StatusCode 302 before forwarding
+    </notes>
+  </release>
+  <release>
+    <version>
+      <release>0.1.0</release>
+      <api>0.1.0</api>
+    </version>
+    <stability>
+     <release>stable</release>
+     <api>stable</api>
+    </stability>
+    <license uri="http://www.symfony-project.com/license">MIT license</license>
+    <date>2009-01-14</date>
+    <license>MIT</license>
+    <notes>
+      * First Relase
+    </notes>
+  </release>
+ </changelog>
+</package>
