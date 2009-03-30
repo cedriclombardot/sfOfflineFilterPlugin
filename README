@@ -1,77 +1,31 @@
-## sfPackageMakerPlugin ##
+# sfOfflineFilterPlugin
 
-### Description
+## Description
  
-This plugin will help you to create a package by listing all the file in your 
-plugin directory.
+This plugin will help you to create a package by listing all the file in your plugin directory.
 
-Take the time to read all the options, like that you could manage automaticaly the xml changelog only 
-using the task.
- 
-### How To Install ###
+
+## How To Install
 
 {{{
-   ./symfony plugin:install sfPackageMakerPlugin --version="0.2"
+   ./symfony plugin:install sfOfflineFilterPlugin  
    ./symfony cc
 }}}
 
-### When you create your plugin ###
- 
- * Copy the package-skelton.xml to your sf_plugins_dir
- * Rename it with this syntax package-*YOUR_PLUGIN_NAME*.xml
- * In the file change the bloc <lead></lead> And all the author bloc
- * Set a summary and a description
- * set also the bloc <dependencies>
- 
- ***WARNING* If you have forgot to create the README and the LICENSE files,
- the task will automatically add this files**
- 
-### The task ###
- 
- You can use :
-   {{{{
-  ./symfony plugin:build-package
-  }}}}
-  
- or 
-   {{{
-  ./symfony plugin-build-package
-  }}}
- 
- The task contain one agrgument :
+In filter.yml Add 
+    [yml]
+    offline:
+      class: sfOfflineFilter
+      
 
-  * The **plugin_name** : by default it's the name of the skelton xml
-  
-The task contains this options :
 
-  * **--skelton_path** or **-p** : if you want to set an other model (by default: package-**YOUR_PLUGIN_NAME**.xml)
-  
-  * **--plugin_version** or **-v** : to set the version of the plugin ( pear format is X.Y.Z )
-  
-  * **--stability** or **-s** : set beta or stable
-  
-  * **--changelog** or **-c** : By this options you will set the notes for the changelog of this version
-  
-  * **--license_uri** or **-uri** : The uri of you license (default : [http://www.symfony-project.com/license](http://www.symfony-project.com/license) )
-  
-  * **--license_name** or **-l** : The name of the license (default : MIT )
-  
-### Recommanded use ###
-  
-  
-{{{
-  
-  ./symfony plugin:build-package -v="X.Y.Z" -s="beta" -c="Your notes for the version" PLUGIN_NAME
- 
-}}}
-  
-  If you have already set the command for a version, but you have forgot something and that you don't want to creant a 
-  new version number :
-  
-  * Make your changes and do only :
-  
-   {{{
-  
-  ./symfony plugin:build-package PLUGIN_NAME
- 
-  }}}
+## To set your website offline
+
+Add in your app.yml
+    all:
+      is_offline:
+        credential: offline # default offline credential to continue to see the site when it is offline
+        module: MODULE_TO_REDIRECT
+        action: ACTION_TO_REDIRECT
+        params:
+          alias: site-offline #SOME params
